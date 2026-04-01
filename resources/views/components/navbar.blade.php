@@ -13,15 +13,21 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('prodotti') }}">Prodotti</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('article.index') }}">I miei articoli</a>
+                </li>
                 @guest
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('register') }}">Registrati</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('login') }}">Login</a>
-                </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('register') }}">Registrati</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('login') }}">Login</a>
+                    </li>
                 @endguest
                 @auth
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('article.create') }}">Crea un articolo</a>
+                    </li>
                     <li class="nav-item">
                         <form action="{{ route('logout') }}" method="POST">
                             @csrf
