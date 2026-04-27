@@ -17,6 +17,8 @@ Route::get('/article/index', [ArticleController::class, 'index'])->name('article
 
 Route::get('article/show/{article}', [ArticleController::class, 'show'])->name('article.show');
 
-Route::get('article/edit/{article}', [ArticleController::class, 'edit'])->name('article.edit')->middleware('auth');;
-Route::put('article/update/{article}', [ArticleController::class, 'update'])->name('article.update')->middleware('auth');;
-Route::delete('article/delete/{article}', [ArticleController::class, 'destroy'])->name('article.delete')->middleware('auth');;
+Route::get('article/edit/{article}', [ArticleController::class, 'edit'])->name('article.edit')->middleware('auth');
+Route::put('article/update/{article}', [ArticleController::class, 'update'])->name('article.update')->middleware('auth');
+Route::delete('article/delete/{article}', [ArticleController::class, 'destroy'])->name('article.delete')->middleware('auth');
+
+Route::get('/user/profile', [PublicController::class, 'profile'])->name('user.profile')->middleware('auth');

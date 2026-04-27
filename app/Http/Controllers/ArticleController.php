@@ -72,12 +72,12 @@ class ArticleController extends Controller
      */
     public function update(AricleEditRequest $request, Article $article)
     {
-        $article->update([
-            $article->titolo = $request->titolo,
-            $article->autore = $request->autore,
-            $article->descrizione = $request->descrizione,
-            $article->prezzo = $request->prezzo
-        ]);
+    $article->update([
+        'titolo' => $request->titolo,
+        'autore' => $request->autore,
+        'descrizione' => $request->descrizione,
+        'prezzo' => $request->prezzo,
+]);
         if($request->img){
             $request->validate(['img'=>'image']);
                         $article->update([

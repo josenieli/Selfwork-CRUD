@@ -29,6 +29,9 @@
                         <a class="nav-link" href="{{ route('article.create') }}">Crea un articolo</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="{{ route('user.profile') }}">il mio profilo</a>
+                    </li>
+                    <li class="nav-item">
                         <form action="{{ route('logout') }}" method="POST">
                             @csrf
                             <button class="nav-link" type="submit">Logout</button>
