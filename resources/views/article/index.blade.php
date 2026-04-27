@@ -19,6 +19,8 @@
                         <div class="card-body">
                             <h5 class="card-title">{{ $article->titolo }}</h5>
                             <p class="card-subtitle">{{ $article->descrizione }}</p>
+                            <p class="card-text">Creato dall'utente: {{ $article->user->name ?? 'Nessun utente' }} </p>
+
                             <p class="card-text">{{ $article->prezzo }} €</p>
                             <a href="{{ route('article.show', compact('article')) }}" class="btn btn-primary">Dettaglio
                                 articolo</a>

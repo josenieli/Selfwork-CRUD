@@ -7,6 +7,7 @@ use App\Http\Requests\AricleEditRequest;
 use App\Http\Requests\ArticleCreateRequest;
 use App\Models\Article;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 
 class ArticleController extends Controller
@@ -43,7 +44,8 @@ class ArticleController extends Controller
             'autore'=> $request->autore,
             'descrizione'=> $request->descrizione,
             'prezzo'=> $request->prezzo,
-            'img'=> $img
+            'img'=> $img,
+            'user_id'=> Auth::user()->id
         ]);
         return redirect()->back()->with('message', 'articolo inserito con successo');
     

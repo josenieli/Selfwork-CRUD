@@ -9,6 +9,13 @@ class Article extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'titolo', 'descrizione', 'prezzo', 'img'
+        'titolo', 'descrizione', 'prezzo', 'img', 'user_id'
     ];
+    /**
+     * Get the post that owns the comment.
+     */
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }
